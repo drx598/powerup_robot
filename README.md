@@ -2,9 +2,7 @@
 
 Requirements : Python3, pip
 
-optionally use virtualenv:
-```
-```
+optionally use virtualenv
 
 ```
    git clone git@github.com:drx598/powerup_robot.git
