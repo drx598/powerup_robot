@@ -29,3 +29,8 @@ By editing ```inputFile.txt```  and running ```run.py``` again you can test diff
 ```
 python3 -m pytest
 ```
+## Assumptions
+
+- Any number of robots could be present on the plateau
+- Robots cannot move to an occupied position
+- Robots are limited to navigation within the plateau

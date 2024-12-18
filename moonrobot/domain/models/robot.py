@@ -6,11 +6,12 @@ from moonrobot.domain.models.position import RobotPosition
 
 class Robot:
 
-    def __init__(self, plateau: Plateau, initialPosition: RobotPosition):
+    def __init__(self, plateau: Plateau, initialPosition: RobotPosition, occupied: List[RobotPosition] = []):
         if not plateau.isPositionWithinPlateauArea(initialPosition):
             raise ValueError('robot initial position out of plateau area')
         self.plateau: Plateau = plateau
         self.currentPosition: RobotPosition = initialPosition
+        self.occupied: List[RobotPosition] = occupied
 
     def processCommands(self, commands: List[MovementCommand]):
 
@@ -63,5 +64,13 @@ class Robot:
                                                 lambda: RobotPosition(0, 0, Orientation.SOUTH))()
         if not self.plateau.isPositionWithinPlateauArea(newRobotPosition):
             raise ValueError('Moving out of bounds prohibited')
+        if self.isOccupied(newRobotPosition):
+            raise ValueError('Position already Occupied')
         self.currentPosition = newRobotPosition
         return self.currentPosition
+    
+    def isOccupied( self, position: RobotPosition):
+        for occupiedPosition in self.occupied:
+            if position.coordinateInX == occupiedPosition.coordinateInX and position.coordinateInY == occupiedPosition.coordinateInY:
+                return True
+        return False
