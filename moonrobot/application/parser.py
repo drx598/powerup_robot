@@ -15,11 +15,14 @@ class Parser:
 
     def parseFile(self, filePath: str) -> InstructionSet:
         with open(filePath, 'r') as inputFile:
+            # reads 1st line from text file
             plateauInputLine = inputFile.readline()
             plateau = self.parsePlateauInput(plateauInputLine)
 
             robotInstructions = []
+            # iterate over remaining lines in file starting from second line
             for lineCount, line in enumerate(inputFile, 1):
+                # odd line count always contains position text so initialize robot position here else create robot instruction
                 if lineCount % 2 != 0:
                     robotInitialPosition = self.parseInitialPosition(line)
                 else:
@@ -41,6 +44,7 @@ class Parser:
                              int(inputLineAsList[1]),
                              orientation)
 
+    # splits input string and returns platea object
     def parsePlateauInput(self, inputString: str) -> Plateau:
         if not re.match(self.validPlateauInput, inputString):
             raise ParsingError("Invalid plateau dimensions")
