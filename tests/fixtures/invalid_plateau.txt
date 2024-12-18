@@ -1,0 +1,7 @@
+s 5
+3 3 E
+MMRMMRMRRM
+2 2 N
+MRMLM
+1 1 N
+M

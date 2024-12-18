@@ -1,6 +1,8 @@
+README.md
 setup.py
 PowerUpMoonRobot.egg-info/PKG-INFO
 PowerUpMoonRobot.egg-info/SOURCES.txt
 PowerUpMoonRobot.egg-info/dependency_links.txt
 PowerUpMoonRobot.egg-info/requires.txt
 PowerUpMoonRobot.egg-info/top_level.txt
+moonrobot/__init__.py

@@ -1,2 +1,4 @@
 /venv
 .vscode/
+moonrobot/__pycache__/
+tests/__pycache__/
