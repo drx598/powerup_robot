@@ -2,3 +2,4 @@
 .vscode/
 moonrobot/__pycache__/
 tests/__pycache__/
+build/
