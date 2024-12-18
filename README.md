@@ -1,8 +1,3 @@
-# MarsRobot-python
-MarsRobot is a programming exercise aimed to put in practice different principles and techniques,e.g.,OOP, TDD, Domain Driven Design, etc. 
-Here a possible solution in Python is presented.
-
-
 ## Installing
 
 Requirements : Python3, pip
@@ -29,8 +24,10 @@ By editing ```inputFile.txt```  and running ```run.py``` again you can test diff
 ```
 python3 -m pytest
 ```
-## Assumptions
+## Assumptions/ Thought process
 
 - Any number of robots could be present on the plateau
 - Robots cannot move to an occupied position
 - Robots are limited to navigation within the plateau
+- Robot cannot exist without a plateau and commands cannot be sent to a robot not on a plateau
+
